@@ -1,15 +1,23 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE HTML>
+<html>
 <head>
   <title></title>
-  <script type="text/javascript">
-    var localHandler = function(data){
-      alert('Local handler, called by the remote x.js, with data: ' + data.result);
-    }
-  </script>
-  <script type="text/javascript" src="https://raw.github.com/seanyao/jsonp/master/x.js"></script>
+	<script type="text/javascript" src="jquery-1.9.0.min.js" />
+  	<script type="text/javascript" src="https://raw.github.com/seanyao/jsonp/master/x.js" />
+  	<script type="text/javascript">
+		var localHandler = function(data){
+	  		$("pDiv").append("Local handler, called by the remote x.js, with data: " + data.result);
+		}
+		
+		$.getJSON("y.js",function(result){
+		    $("div").append(result);
+		  );
+		});
+	</script>
+
 </head>
 <body>
-  remote calls
+  <div id="div">remote json: </div>
+  <div id="pDiv">remote jsonp: </div>
 </body>
 </html>

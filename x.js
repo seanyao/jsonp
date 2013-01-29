@@ -1,1 +1,1 @@
-localHandler({"result":"remote data"});
+localHandler({"result":"remote data, jsonp format"});

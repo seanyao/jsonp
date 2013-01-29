@@ -1,0 +1,1 @@
+{"result":"remote data, raw json format"}
