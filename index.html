@@ -9,7 +9,7 @@
 	  		$("pDiv").append("Local handler, called by the remote x.js, with data: " + data.result);
 		}
 		
-		$.getJSON("y.js",function(result){
+		$.getJSON("https://raw.github.com/seanyao/jsonp/master/y.js",function(result){
 		    $("div").append(result);
 		  );
 		});
