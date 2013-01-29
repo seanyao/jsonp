@@ -2,22 +2,20 @@
 <html>
 <head>
   <title></title>
-	<script type="text/javascript" src="jquery-1.9.0.min.js" />
-  	<script type="text/javascript" src="https://raw.github.com/seanyao/jsonp/master/x.js" />
-  	<script type="text/javascript">
-		var localHandler = function(data){
-	  		$("pDiv").append("Local handler, called by the remote x.js, with data: " + data.result);
-		}
-		
-		$.getJSON("https://raw.github.com/seanyao/jsonp/master/y.js",function(result){
-		    $("div").append(result);
-		  );
-		});
-	</script>
-
+	<script type="text/javascript" src="jquery-1.9.0.min.js"></script>
 </head>
 <body>
-  <div id="div">remote json: </div>
-  <div id="pDiv">remote jsonp: </div>
+  <div id="div">remote json==///=></div>
+  <div id="pDiv">remote jsonp====></div>
+	<script type="text/javascript">
+		var localHandler = function(data){
+	  		$("#pDiv").append("  Local handler, called by the remote x.js, with data: " + data.result);
+		};
+		
+		$.getJSON("https://raw.github.com/seanyao/jsonp/master/y.js",function(result){
+		    $("#div").append(result);
+			});
+	</script>
+	<script type="text/javascript" src="https://raw.github.com/seanyao/jsonp/master/x.js"></script>
 </body>
 </html>
